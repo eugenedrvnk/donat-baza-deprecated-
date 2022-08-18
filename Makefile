@@ -23,3 +23,9 @@ down-volume: #  WARNING: stop and destroy containers with volumes
 
 ps: # show started containers and their status
 	docker-compose -f ${compose_file_path} ps
+
+connect_nest:
+	docker-compose -f ${compose_file_path} exec nest bash
+
+connect_db:
+	docker-compose -f ${compose_file_path} exec mysql bash

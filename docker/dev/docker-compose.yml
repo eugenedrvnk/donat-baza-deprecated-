@@ -10,7 +10,7 @@ services:
     volumes:
       - ../../:/app
   mysql:
-    container_name: donat_baza_db
+    container_name: donat_baza_db 
     restart: always
     image: mysql:5.7
     command: --character-set-server=utf8mb4 --collation-server=utf8mb4_unicode_ci
@@ -20,8 +20,8 @@ services:
       - MYSQL_PASSWORD=${DB_PASSWORD}
       - MYSQL_DATABASE=${DB_NAME}
     volumes:
-      - my-datavolume:/var/lib/mysql
+      - db:/var/lib/mysql
     ports:
-    - "3306:3306" 
+    - "3307:3306"
 volumes:
-  my-datavolume:
+  db:
